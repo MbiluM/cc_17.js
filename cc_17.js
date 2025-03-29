@@ -21,7 +21,7 @@ class Customer { // Customer class
     }
 };
 
-class SalesRep { // SalesRep class
+class SalesRep { //SalesRep class
     constructor(name) {
         this.name = name;
         this.clients = [];
@@ -44,21 +44,21 @@ class SalesRep { // SalesRep class
     }
 }
 
-// VIPCustomer class (inherits from Customer)
+// VIPCustomer class
 class VIPCustomer extends Customer {
     constructor(name, email, vipLevel) {
         super(name, email);
         this.vipLevel = vipLevel;
     }
 
-    // Override getTotalSpent to include 10% bonus
+    //getTotalSpent to include 10% bonus
     getTotalSpent() {
         const totalSpent = super.getTotalSpent();
         return totalSpent * 1.1; // Adding 10% bonus
     }
 }
 
-//Customer and SalesRep classes
+//customer and SalesRep classes
 const customer1 = new Customer("Tendai Masuta", "tendaimasuta23.com");
 const customer2 = new Customer("Gumani Mabilu", "gumanimbailu@icloud.com");
 const vipCustomer = new VIPCustomer("Lufuno Mabilu", "lufunomabilu@icloud.com", "Gold");
