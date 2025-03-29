@@ -83,3 +83,19 @@ salesRep1.clients.forEach(client => console.log(`- ${client.name}`));
 
 console.log(`Total spent by Tendai Masuta: $${salesRep1.getClientTotal("Tendai Masuta")}`);
 console.log(`Total spent by Lufuno Mabilu (VIP): $${salesRep1.getClientTotal("Lufuno Mabilu")}`);
+
+// Client Report System
+const allCustomers = [customer1, customer2, vipCustomer];
+
+//calculate total revenue
+const totalRevenue = allCustomers.reduce((sum, customer) => sum + customer.getTotalSpent(), 0);
+console.log(`Total revenue from all customers: $${totalRevenue}`);
+
+//find customers spend over $500
+const highSpenders = allCustomers.filter(customer => customer.getTotalSpent() > 500);
+console.log("High-spending customers:");
+highSpenders.forEach(customer => console.log(`- ${customer.name}: $${customer.getTotalSpent()}`));
+
+//customer summary
+const customerSummary = allCustomers.map(customer => ({ name: customer.name, totalSpent: customer.getTotalSpent() }));
+console.log("Customer Summary:", customerSummary);
